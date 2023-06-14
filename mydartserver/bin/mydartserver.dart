@@ -51,6 +51,7 @@ final _router = shelf_router.Router()
   )
   ..get('/info.json', _infoHandler)
   ..get('/sum/<a|[0-9]+>/<b|[0-9]+>', _sumHandler);
+  
 
 Response _helloWorldHandler(Request request) => Response.ok('Hello, World!');
 
@@ -90,6 +91,7 @@ Response _infoHandler(Request request) => Response(
       },
       body: _jsonEncode(
         {
+          '吃个桃桃' : "好凉凉",
           'Dart version': _dartVersion,
           'uptime': _watch.elapsed.toString(),
           'requestCount': ++_requestCount,
